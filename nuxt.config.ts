@@ -5,5 +5,6 @@ export default ({
             theme: 'nord',
             preload: ['js', 'css', 'html', 'md', 'ts', 'tsx', 'vue', 'python', 'ruby', 'java'],
         }
-    }
+    },
+    buildModules: ['@nuxt/http'],
 })

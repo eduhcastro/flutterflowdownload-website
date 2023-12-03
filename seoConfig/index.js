@@ -1,5 +1,5 @@
 export default {
-  title: "Logspot - Opensource changelog template",
+  title: "FlutterFlow Download - Unofficial Website",
   description:
     "Logspot is an open source change log template made with Nuxt, Vue, and Tailwindcss.",
   og: {
