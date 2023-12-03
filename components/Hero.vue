@@ -1,51 +1,5 @@
-<style scoped>
-.contri-list,
-.step-3 {
-  overflow: hidden;
-  position: relative;
-}
+<style scoped></style>
 
-.step-3 {
-  align-content: center;
-  align-items: center;
-  display: flex;
-  flex: none;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 24px;
-  height: -moz-min-content;
-  height: min-content;
-  justify-content: flex-start;
-  padding: 0;
-  width: 100%;
-}
-
-.contri-list,
-.contri-list-user {
-  flex: none;
-  transition: all .5s ease;
-}
-
-.contri-list {
-  height: 40px;
-}
-
-.contri-list,
-.step-3 {
-  overflow: hidden;
-  position: relative;
-}
-
-.contri-list-user {
-  border-radius: 99px;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  top: 0;
-  width: 40px;
-  will-change: transform;
-}
-</style>
 <template>
   <header class="py-12 px-4 sm:px-6 lg:px-8" style="background-image: url(background1.png);
   background-size: 30%;
@@ -65,7 +19,7 @@
       </p>
 
       <div style="display: flex;justify-content: center;margin-top: 6px;">
-        <button
+        <button onclick="window.open('https://github.com/eduhcastro/flutterflow-desktop/releases/download/1.1.1/FlutterFlow.Windows.Setup.1.1.1.exe','_blank')" 
           style="min-width: 120px;background-color: #4b39ef;margin-left: 0;margin-right: 0;box-shadow: 1px 1px 3px rgba(20, 24, 27, .69);color: #fff;border-radius: 8px;padding: 15px 24px;font-family: Productsans, sans-serif;font-size: 16px;transition: all .3s, opacity .2s;max-width: 250px;font-weight: 500;">
           Download on Windows</button>
         <button
@@ -74,21 +28,13 @@
       </div>
 
 
-      <div class="step-3" style="margin-top: 35px;">
-        <div class="contri-list" style="display:flex">
-
-          <div v-for="contributor in contributors" :key="contributor.avatar_url" class="contri-list-user">
-            <img :src="contributor.avatar_url" alt="Contributor Avatar"
-              style="pointer-events:none;user-select:none;display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:cover;image-rendering:auto">
-          </div>
-
-        </div>
-      </div>
+      <Contributors />
 
       <div
         style="display:flex;justify-content:center;margin-top:10px;flex-direction: column;align-content: center;text-align: center;place-items: center;">
-        <h3 style="font-size: 12px;color: #484848;">Contribute to the project</h3><button id="login-with-github"
-          type="submit" data-network="Github" class="button social-account-button button-fullwidth"
+        <h3 style="font-size: 12px;color: #484848;">Contribute to the project</h3>
+        <button onclick="window.open('https://github.com/eduhcastro/flutterflow-desktop','_blank')" data-network="Github"
+          class="button social-account-button button-fullwidth"
           style="font-family: var(--cp-font-family);-webkit-appearance: none;display: -webkit-inline-box;display: -webkit-inline-flex;display: -ms-inline-flexbox;display: flex;-webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;vertical-align: middle;position: relative;font-family: inherit;font-size: 14px;text-shadow: none;line-height: 1.2;white-space: nowrap;text-overflow: ellipsis;text-decoration: none !important;font-weight: 400 !important;cursor: pointer;background: hsl(0deg 0% 0%);color: white;border-radius: 11px;padding: 10px;width: 210px;place-items: center;">
           <svg width="98" height="96" viewBox="0 0 100 100"
             style="width: 20px;height: 20px;fill: hsl(0deg 0% 100%);position: absolute;left: 14px;">
@@ -99,8 +45,10 @@
           <span
             style="--cp-button-color: hsl(0deg 0% 100%);--cp-button-hover-bg: var(--cp-color-19);padding-left: 30px;text-align: left;">Github
             repository project</span>
-        </button><button id="login-with-github" type="submit" data-network="Github"
-          class="button social-account-button button-fullwidth"
+        </button>
+
+        <button onclick="window.open('https://github.com/eduhcastro/flutterflowdownload-website','_blank')"
+          data-network="Github" class="button social-account-button button-fullwidth"
           style="font-family: var(--cp-font-family);-webkit-appearance: none;display: -webkit-inline-box;display: -webkit-inline-flex;display: -ms-inline-flexbox;display: flex;-webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;vertical-align: middle;position: relative;font-family: inherit;font-size: 14px;text-shadow: none;line-height: 1.2;white-space: nowrap;text-overflow: ellipsis;text-decoration: none !important;font-weight: 400 !important;cursor: pointer;background: hsl(0, 0%, 100%);color: black;border-radius: 11px;padding: 10px;width: 210px;margin-top: 5px;box-shadow: 10px;place-items: center;box-shadow: 1px 1px #b9b9b9;">
           <svg width="98" height="96" viewBox="0 0 100 100"
             style="width: 20px;height: 20px;fill: hsl(0deg 0% 100%);position: absolute;left: 14px;filter: invert(100%);">
@@ -119,53 +67,9 @@
     </div>
   </header>
 
-  <h1 style="text-align: center;font-size: medium;">Components</h1>
-
-  <div style="height: 120px;margin-top: 15px;">
-    <div style="display:flex;justify-content: center;align-items: center;">
-
-      <div>
-        <h3 style="font-size: 13px; color: #5e5d5d;">App</h3>
-        <div style="display: flex; justify-content: center; align-items: center; height: 40px;">
-          <div>
-            <img style="width: 200px;"
-              src="https://assets-global.website-files.com/635ff61792c1c6ebf4e1edad/6364138a12ac6843f1c23412_flutterflow_logo_black-p-500.png">
-          </div>
-
-          <div>
-            <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/electronjs_logo_icon_169208.png"
-              style="width: 200px;">
-          </div>
-        </div>
-      </div>
-
-
-      <div>
-        <h3 style="font-size: 13px;
-  color: #5e5d5d;">Website</h3>
-        <div style="display: flex; justify-content: center; align-items: center;  height: 40px;">
-          <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Nuxt_logo_%282021%29.svg" style="width: 170px;">
-          </div>
-
-          <div>
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Vercel_logo_black.svg/2560px-Vercel_logo_black.svg.png"
-              style="width: 150px;">
-          </div>
-        </div>
-      </div>
-
-
-
-    </div>
-  </div>
+  <Components />
 </template>
 
-<script setup>
-const { data: contribuidores } = await useFetch('https://api.github.com/repos/eduhcastro/flutterflow-desktop/contributors')
-var contributors = contribuidores.value
-</script>
 
 <style scoped>
 .form-input {
