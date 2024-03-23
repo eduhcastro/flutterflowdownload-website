@@ -2,7 +2,7 @@
   <main class="min-h-screen relative">
 
 
-    <template>
+   
       <header class="py-12 px-4 sm:px-6 lg:px-8">
         <div class="relative mx-auto max-w-[37.5rem] pt-20 text-center" style="
     display: flex;
@@ -51,7 +51,7 @@
 
         </div>
       </header>
-    </template>
+  
 
 
 
